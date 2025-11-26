@@ -31,12 +31,12 @@ public class LoadingManager : MonoBehaviour {
         SaveLoadManager.SaveGame();
 
         if (SceneManager.GetActiveScene().name == "LoadingScene") {
-            LoadGameScene().Forget();
+            LoadMetaScene().Forget();
         }
     }
 
-    private async UniTask LoadGameScene() {
-        _sceneName = "GameScene";
+    private async UniTask LoadMetaScene() {
+        _sceneName = "MetaScene";
         var op = SceneManager.LoadSceneAsync(_sceneName, LoadSceneMode.Additive);
         op.allowSceneActivation = false;
 
